@@ -1,0 +1,41 @@
+.fondTitre {
+  background-color: #f3e9f1;
+  color: #3f2630;
+  font-size: 1.3em;
+}
+
+.fondPage {
+  background-color: #d0d3db;
+  color: #3f2630;
+  padding-top: 30px;
+}
+
+.acceuil-ours {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 2vh;
+  color: #3f2630;
+}
+
+.acceuil-ours a {
+  padding: 10px;
+  background-color: #f3e9f1;
+  border-radius: 50%;
+  color: #3f2630;
+}
+
+.footer {
+  /*position: fixed;
+  left: 0;
+  bottom: 0;*/
+  width: 100%;
+  background-color: #f3e9f1;
+  color: #3f2630;
+  text-align: center;
+}
+
+.footer a {
+  font-size: 1.5em;
+}
+
+/*# sourceMappingURL=style.css.map */

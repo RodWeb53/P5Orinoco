@@ -1,0 +1,38 @@
+.fondTitre{
+  background-color: $couleur_primaire;
+  color: $couleur_texte;
+  font-size: 1.3em;
+}
+
+
+.fondPage{
+  background-color: $couleur_secondaire;
+  color: $couleur_texte;
+  padding-top: 30px;
+}
+
+.acceuil-ours {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 2vh;
+  color: $couleur_texte;
+}
+
+.acceuil-ours a {
+  padding: 10px;
+  background-color: $couleur_primaire;
+  border-radius: 50%;
+  color: $couleur_texte;
+}
+
+.footer {
+  width: 100%;
+  background-color: $couleur_primaire;
+  color: $couleur_texte;
+  text-align: center;
+}
+
+.footer a {
+  font-size: 1.5em;
+}
+
