@@ -1,4 +1,3 @@
-
 //création d'une fonction async pour la récupération des données et création du contenu de la page d'acceuil
 const getTeddies = async function() {
   try{
@@ -53,8 +52,8 @@ const getTeddies = async function() {
       }
       //création d'une conditon else si la réponse est ko
     } else {
-      console.error('Le serveur retourne : ', response.status);
-      alert("Une erreur est survenue : " + response.status);
+      console.error('Le serveur retourne : ', reponse.status);
+      alert("Une erreur est survenue : " + reponse.status);
     }
   } catch (error) {
     alert("l'erreur suivante est survenu : " + error);
