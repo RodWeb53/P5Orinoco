@@ -66,7 +66,7 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
         divColPanierListeTarif.appendChild(colPanierListeTarif);
         colPanierListeTarif.textContent = "Tarif " + enregistrement.teddyPrix + " €";
 
-        //création div col dans la div row pour le tarif
+        //création div col dans la div row pour le bouton supprimer
         const divColPanierListeBouton = document.createElement('div');
         divRowPanierListe.appendChild(divColPanierListeBouton);
         divColPanierListeBouton.className = 'col-sm-3 text-center';
@@ -193,10 +193,9 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
             alert("votre adresse mail n'est pas conforme")
             //envoie du montant total de la commande de le localstorage
       } else {event.preventDefault();
-            localStorage.setItem('prixTotal', montantTotal)
-            const prixSauver = localStorage.getItem(montantTotal);
+            localStorage.setItem('montantTotal', montantTotal);
+            const prixSauver = localStorage.getItem('montantTotal');
             console.log(prixSauver);
-            alert("le montant est passée en array")
             //---création d'un array pour mettre le contact et les produits----\\
             //création du contact
             let contact = {
@@ -233,7 +232,6 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
                 if (reponse.ok){
                   let donnees = await reponse.json();
                   console.log(donnees.orderId);
-                  alert('message de passage des données')
                   localStorage.setItem("reponseOrder", donnees.orderId);
                   window.location = 'confirmation.html';
                 } else {

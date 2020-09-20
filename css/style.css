@@ -52,4 +52,18 @@
   margin-bottom: 20px;
 }
 
+.entete-conf {
+  font-size: 2vh;
+  padding-top: 15px;
+}
+
+.montant-cde {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.detail-cde {
+  font-style: italic;
+}
+
 /*# sourceMappingURL=style.css.map */

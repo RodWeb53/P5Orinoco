@@ -34,7 +34,12 @@ const getTeddies = async function() {
       //création div col dans la div row
       const divColProduit = document.createElement('div');
       divRowProduit.appendChild(divColProduit);
-      divColProduit.className = 'col-sm-12 text-center acceuil-ours';
+      divColProduit.className = 'col-sm-12 acceuil-ours';
+
+      //création du descriptif pour l'ours sélectionné
+      const titreDescriptifOurs = document.createElement('h2');
+      divColProduit.appendChild(titreDescriptifOurs);
+      titreDescriptifOurs.textContent = "Descriptif :";
 
       //création du descriptif pour l'ours sélectionné
       const descriptifOurs = document.createElement('p');
