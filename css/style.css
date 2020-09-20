@@ -39,4 +39,17 @@
   margin: 15px 0px 30px 0px;
 }
 
+.supprimer-total {
+  margin: 20px;
+}
+
+.montant-total {
+  margin-top: 20px;
+}
+
+.bouton-valider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 /*# sourceMappingURL=style.css.map */

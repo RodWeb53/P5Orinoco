@@ -123,7 +123,7 @@ const getTeddies = async function() {
         let choixTeddy = {
           teddyNom: teddies.name,
           teddyId: teddies._id,
-          teddyCouleur: couleur.value,
+          teddyCouleur: choixCouleur.value,
           teddyPrix: teddies.price / 100,
           teddyQuantite: 1,
         };

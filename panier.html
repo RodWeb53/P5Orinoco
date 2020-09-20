@@ -39,9 +39,6 @@
                   <a class="nav-link" href="index.html" title="Page index">Accueil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="produit.html" title="Page produit">Produits</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" href="panier.html" title="Page panier">Panier</a>
                 </li>
               </ul>
@@ -52,6 +49,60 @@
     </header>
     
     <main class="fondPage">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="jumbotron text-center" id="page-panier">
+              <h1>Récapitulatif de votre panier</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="panier-list">
+        <!--Les données du panier sont insérées par le fichier panier.js-->
+      </div>
+      <div class="container" >
+        <form>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="nom">Saisissez votre nom</label>
+              <input type="text" class="form-control" id="nom" placeholder="Nom" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="prenom">Saisissez votre prénom</label>
+              <input type="text" class="form-control" id="prenom" placeholder="Prénom" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="adresse">saisissez votre adresse</label>
+              <input type="text" class="form-control" id="adresse" placeholder="Adresse" required>
+              
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="ville">Saisissez votre ville</label>
+              <input type="text" class="form-control" id="ville" placeholder="Ville" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="email">Saisissez votre email</label>
+              <input type="email" class="form-control" id="email" placeholder="model@gmail.com" required>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center bouton-valider">
+              <button class="btn btn-primary" id="valid-panier" type="submit">Valider la commande</button>
+            </div>
+          </div>
+          
+          
+        </form>
+        
+      </div>
+      
       
     </main>
 
@@ -95,7 +146,7 @@
 
 
     <!-- Optional JavaScript -->
-
+    <script type="text/javascript" src="JS/panier.js"></script> 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
