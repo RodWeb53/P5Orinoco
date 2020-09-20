@@ -19,7 +19,7 @@ const getTeddies = async function() {
       //création du h1 pour le titre du teddy
       const h1PageProduit = document.createElement('h1');
       divH1PageProduit.appendChild(h1PageProduit);
-      h1PageProduit.textContent = "Personnalisez " + teddies.name;
+      h1PageProduit.textContent = 'Produit "' + teddies.name + '"';
 
       //--------------------------------------------------------------------\\
 
@@ -64,7 +64,7 @@ const getTeddies = async function() {
       //création div col dans la div row
       const divColChoix1 = document.createElement('div');
       divRowChoix.appendChild(divColChoix1);
-      divColChoix1.className = 'col-sm-3';
+      divColChoix1.className = 'col-sm-2';
 
       //création div col dans la div row pour mettre le label
       const divColChoix2 = document.createElement('div');
@@ -87,6 +87,16 @@ const getTeddies = async function() {
       choixCouleur.className = 'form-control';
       choixCouleur.setAttribute('name', "couleur de " + teddies.name);
       choixCouleur.setAttribute('id', "choixCouleur-1");
+
+      //création div col dans la div row pour afficher le tarif
+      const divColTarif = document.createElement('div');
+      divRowChoix.appendChild(divColTarif);
+      divColTarif.className = 'col-sm-3 text-center';
+
+      //création d'un paragraphe pour mettre le tarif
+      const colTarif = document.createElement('div');
+      divColTarif.appendChild(colTarif);
+      colTarif.textContent = "Tarif : " + teddies.price / 100 + " €";
 
       //constante pour récupérer les couleurs de la base
       const couleur = teddies.colors;
@@ -140,7 +150,7 @@ const getTeddies = async function() {
           localStorage.setItem('nouvelArticle', JSON.stringify(enregistrementTeddy));
           console.log(enregistrementTeddy);
           //envoi d'un message pour informer que le produit est deans le panier et poser une question
-          if (window.confirm(teddies.name + "a été ajouté à votre panier. Voulez vous voir votre panier ?")) {
+          if (window.confirm(teddies.name + " a été ajouté à votre panier. pour aller sur votre panier cliquez sur OK sinon cliquez sur Annuler pour revenir à la page d'accueil ?")) {
             window.location.href = "panier.html";
           }else {
             window.location.href = "index.html";

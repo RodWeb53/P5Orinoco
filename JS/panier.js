@@ -233,6 +233,7 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
                   let donnees = await reponse.json();
                   console.log(donnees.orderId);
                   localStorage.setItem("reponseOrder", donnees.orderId);
+                  confirm('La connexion avec le serveur à reussi')
                   window.location = 'confirmation.html';
                 } else {
                   event.preventDefault();
