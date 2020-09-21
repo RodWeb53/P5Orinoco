@@ -1,3 +1,19 @@
+# Orinoco Rodweb53 #
+
+Pour lancer le site il faut cloner le site à partir de l’adresse : 
+https://github.com/RodWeb53/P5Orinoco
+
+	Installer les packages NPM nécessaires au bon fonctionnement du site.
+
+	Lancer le serveur : node server.js
+
+  Si le lancement du serveur a fonctionner vous devriez avoir le message:
+  Successfully connected to MongoDB Atlas!
+
+  Ouvrir le fichier index.html dans le navigateur de votre choix.
+
+
+
 # Orinoco #
 
 This is the back end server for Project 5 of the Junior Web Developer path.
