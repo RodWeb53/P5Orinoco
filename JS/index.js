@@ -6,7 +6,7 @@ const getTeddies = async function() {
     //création d'une condition if si la réponse est ok
     if (reponse.status === 200){
       let teddies = await reponse.json();
-      console.log(teddies);
+      
       //création d'une boucle pour récupérer les données de fetch et créer la page index.html
       for (let teddy of teddies){
         // récupération de la div avec id teddies de la page index.html pour la mettre dans une constante

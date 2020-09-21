@@ -1,6 +1,5 @@
 //récupération des données dans le local storage
 let enregistrementTeddy = JSON.parse(localStorage.getItem('nouvelArticle'));
-console.log(enregistrementTeddy);
 
 //----------------------------------------------------------------------\\
 //création de la partie liste des produits
@@ -13,11 +12,9 @@ const divRowPanierListe = document.createElement('div');
 panierListe.appendChild(divRowPanierListe);
 divRowPanierListe.className = 'row';
 
-
-
 //verification si le panier contient des éléments
 if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
-  //si le panier est vide
+  //---- si le panier est vide ----\\
 
   //création div col dans la div row
   const divColPanierListe = document.createElement('div');
@@ -29,7 +26,7 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
   panierVide.className =  "text-danger"
   panierVide.textContent = "votre panier est vide";
   } else {
-      //S'il y a des éléments dans le panier création de la liste du panier
+      //-----S'il y a des éléments dans le panier création de la liste du panier -----\\
       //création de la variable pour faire le compteur
       let i = 0;
       for (enregistrement of enregistrementTeddy) {
@@ -59,8 +56,6 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
         divRowPanierListe.appendChild(divColPanierListeTarif);
         divColPanierListeTarif.className = 'col-sm-2 text-center produitpanier';
         
-
-
         //création du tarif du teddy pour la ligne du panier
         const colPanierListeTarif = document.createElement('p');
         divColPanierListeTarif.appendChild(colPanierListeTarif);
@@ -77,7 +72,6 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
         boutonSupprimerLigne.className = "btn btn-danger supprimer-ligne";
         boutonSupprimerLigne.id = i++;
         boutonSupprimerLigne.textContent = "Supprimer";
-
       };
       //boucle selectionner et supprimer la ligne de produit associé au bouton supprimer via la classe supprimer-ligne
       let supprimerLigne = document.getElementsByClassName('supprimer-ligne');
@@ -87,8 +81,7 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
           //récupération de l'id de la ligne sélectionnée
           
           let id = this.closest(".supprimer-ligne").id;
-          ///alert('suppression id ' + supprimer-ligne.id)
-          
+          //alert('suppression id ' + supprimer-ligne.id)
 
           //suppression de la ligne
           enregistrementTeddy.splice(id, 1);
@@ -101,7 +94,6 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
 
           //retour sur la page d'acceuil
           window.location.href = "panier.html";
-
         });
       };
     // --------Calcul du montant total de la commande --------\\
@@ -111,12 +103,9 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
       let ligne = enregistrement.teddyPrix;
       montantLigne.push(ligne);
     };
-
     //fonction pour le calcul de valeur dans un array
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     const montantTotal = montantLigne.reduce(reducer, 0);
-    console.log(montantTotal);
-
     //-----Insertion de la ligne de montant dans la page ---\\
     //création div col dans la div row pour le tarif montant Total
     const divColPanierTarifTotal = document.createElement('div');
@@ -163,11 +152,11 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
     let nom = document.getElementById('nom');
     let adresse = document.getElementById('adresse');
     let ville = document.getElementById('ville');
-    let mail = document.getElementById('email');
+    let email = document.getElementById('email');
     //variable pour effectuer les tests de caractère sur les champs du formulaire
     let testNomVilleValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
     let adresseValid = /^[A-Z-a-z-0-9\s]{5,80}$/;
-    let emailValid = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let emailValid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     validPanier.addEventListener('click', validation);
     
@@ -188,14 +177,13 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
         } else if (testNomVilleValid.test(ville.value) == false){
             event.preventDefault();
             alert("votre ville n'est pas conforme")
-        }else if (emailValid.test(email.value) == false){
+        } else if (emailValid.test(email.value) == false){
             event.preventDefault();
             alert("votre adresse mail n'est pas conforme")
             //envoie du montant total de la commande de le localstorage
       } else {event.preventDefault();
             localStorage.setItem('montantTotal', montantTotal);
             const prixSauver = localStorage.getItem('montantTotal');
-            console.log(prixSauver);
             //---création d'un array pour mettre le contact et les produits----\\
             //création du contact
             let contact = {
@@ -205,20 +193,17 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
               city: ville.value,
               email: email.value,
             }
-            console.log(contact);
             //création du array pour les teddy en passant leur id
             let products = [];
             for (enregistrement of enregistrementTeddy) {
               let productsId = enregistrement.teddyId;
               products.push((productsId));
             }
-            console.log(products);
             //fusion de contact et produit
             let fusion = {
               contact,
               products,
             }
-            console.log(fusion);
             //------fonction pour envoie des données au serveur -----\\
             const envoie = async function (donnees) {
               try {
@@ -231,9 +216,7 @@ if (enregistrementTeddy == null || enregistrementTeddy.length === 0) {
                 });
                 if (reponse.ok){
                   let donnees = await reponse.json();
-                  console.log(donnees.orderId);
                   localStorage.setItem("reponseOrder", donnees.orderId);
-                  confirm('La connexion avec le serveur à reussi')
                   window.location = 'confirmation.html';
                 } else {
                   event.preventDefault();

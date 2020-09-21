@@ -1,15 +1,12 @@
 //-----Récupération des données pour faire la page de confirmation -----\\
 //Récupération du N° de commande
 let orderId = localStorage.getItem('reponseOrder');
-console.log(orderId);
 
 //récupération du montant total de la commande
 const prixSauver = localStorage.getItem('montantTotal');
-console.log(prixSauver);
 
 //récupération des données dans le local storage
 let enregistrementTeddy = JSON.parse(localStorage.getItem('nouvelArticle'));
-console.log(enregistrementTeddy);
 
 
 //------------ Paragraphe d'entête ----------------\\
@@ -50,7 +47,7 @@ const detailConf = document.createElement('p');
 divColDetailConf.appendChild(detailConf);
 detailConf.textContent = "Détail de votre commande :"; 
 
-
+//------- Récupération des éléments de détail de la commande -----\\
 let i = 0;
       for (enregistrement of enregistrementTeddy) {
       
@@ -79,8 +76,6 @@ let i = 0;
         divRowPanierListe.appendChild(divColPanierListeTarif);
         divColPanierListeTarif.className = 'col-sm-2 text-center produitpanier';
         
-
-
         //création du tarif du teddy pour la ligne du panier
         const colPanierListeTarif = document.createElement('p');
         divColPanierListeTarif.appendChild(colPanierListeTarif);
